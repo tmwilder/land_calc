@@ -27,6 +27,9 @@ def dp_unique_combinations(deck, cards_seen):
             return
 
         for key in deck:
+            #Add one card for each different remaining card in the deck.
+            if deck[key] == 0:
+                continue
             new_cards = copy.deepcopy(cards)
             new_deck = copy.deepcopy(deck)
             new_cards[key] += 1
@@ -43,7 +46,7 @@ def dp_unique_combinations(deck, cards_seen):
     return unique_combos
 
 
-def _hash_counter(counter): #NOT UNIQUE!!!!
+def _hash_counter(counter):
     string_list = []
     for card_name, card_count in counter.items():
         string_list.append(card_name + str(card_count))
