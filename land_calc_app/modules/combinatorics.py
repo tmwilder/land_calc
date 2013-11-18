@@ -51,5 +51,4 @@ def _hash_counter(counter):
     for card_name, card_count in counter.items():
         string_list.append(card_name + str(card_count))
     hash_str = "".join(sorted(string_list))
-    # print hash_str
     return hash_str

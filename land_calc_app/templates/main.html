@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Sample Project</title>
-        {% load staticfiles %}
-        <!-- data-main attribute tells require.js to load
-             scripts/main.js after require.js loads. -->
-        <script data-main="{% static 'js/main.js' %}" src="{% static 'js/require.js' %}"></script>
-    </head>
-    <body>
-        <h1>My Sample Project</h1>
-    </body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>Land Calculator</title>
+    {% load staticfiles %}
+    <!-- data-main attribute tells require.js to load
+       scripts/main.js after require.js loads. -->
+    <script data-main="{% static 'js/main.js' %}" src="{% static 'js/require.js' %}"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" media="screen" charset="utf-8" />
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+          <h1>Land Calculator</h1>
+        </div>
+      </div>
+
+      <div class="row" id="deck_contents">
+        <div class="col-xs-3">
+          <h4 class="header">Mana Sources in Deck</h4>
+        </div>
+        {% include "color_control_snippet.html" %}
+      </div>
+      <div class="row" id="mana_cost">
+        <div class="col-xs-3">
+          <h4 class="header">Card Mana Cost</h4>
+        </div>
+        {% include "color_control_snippet.html" %}
+      </div>
+
+      <div class="row" id="other_specs">
+        <div class="col-xs-3">
+          <h4 class="header">Other Information</h4>
+        </div>
+        <div class="col-xs-2">
+          Total cards in deck: <input type="number" id="total_cards" min="0" max="200">
+        </div>
+        <div class="col-xs-2">
+          Play Or Draw?:
+          <select id="on_the_play">
+            <option value="play">Play</option>
+            <option valye="draw">Draw</option>
+          </select>
+        </div>
+        <div class="col-xs-2">
+          <button type="submit" id="get_odds"><h4>Get Your Odds!</h4></div>
+        </div>
+
+        <div class="row" id="chart">
+          <div id="bar_chart"></div>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
 </html>

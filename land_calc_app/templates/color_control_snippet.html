@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/color_control.css' %}" type="text/css" media="screen" charset="utf-8" />
+
+<div class="row">
+  <div class="color_control col-xs-2">
+    <img class="black img-responsive">
+    <form>
+      Black: <input type="number" id="black_count" min="0" max="100">
+    </form>
+  </div>
+
+  <div class="color_control col-xs-2">
+    <img class="blue img-responsive">
+    <form>
+      Blue: <input type="number" id="blue_count" min="0" max="100">
+    </form>
+  </div>
+
+  <div class="color_control col-xs-2">
+    <img class="white">
+    <form>
+      White: <input type="number" id="white_count" min="0" max="100">
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="color_control col-xs-2 col-xs-offset-3">
+    <img class="green img-responsive">
+    <form>
+      Green: <input type="number" id="green_count" min="0" max="100">
+    </form>
+  </div>
+
+  <div class="color_control col-xs-2">
+    <img class="red img-responsive">
+    <form>
+      Red: <input type="number" id="red_count" min="0" max="100">
+    </form>
+  </div>
+
+  <div class="color_control col-xs-2">
+    <img class="colorless img-responsive">
+    <form>
+      Colorless: <input type="number" id="colorless_count" min="0" max="100">
+    </form>
+  </div>
+</div>
