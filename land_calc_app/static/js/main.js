@@ -90,6 +90,11 @@ function(jquery, jqplot, bar_chart) {
         var on_the_play = get_play_status();
         get_odds(deck, card_cost, on_the_play);
     }
-
+    existing_plot = undefined;
     $("#get_odds").on('click', onGetOdds);
+    $(window).resize(function(){
+        if (existing_plot !== undefined){
+            existing_plot.replot();
+        }
+    });
 });

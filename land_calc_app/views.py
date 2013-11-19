@@ -28,8 +28,6 @@ def get_odds(request):
 
         on_the_play = data['on_the_play']
 
-        import pdb; pdb.set_trace()
-
         probability = modules.density.get_odds_range(
             end_turn=11,
             deck=deck,

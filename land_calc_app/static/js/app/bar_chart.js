@@ -6,6 +6,9 @@ define([
     'jqplot/plugins/jqplot.pointLabels.min',
     ], function(jquery){
     return function(data){
+        if (existing_plot !== undefined){
+            existing_plot.destroy();
+        }
         // Can specify a custom tick Array.
         // Ticks should match up one for each y value (category) in the series.
         var ticks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -30,5 +33,6 @@ define([
                 }
             }
         });
+        existing_plot = plot1;
     }
 });
