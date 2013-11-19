@@ -1,0 +1,31 @@
+.color_control .white, .color_control .blue, .color_control .black, .color_control .green, .color_control .red, .color_control .colorless {
+    display: inline;
+    height:20px;
+    width:20px;
+}
+
+.color_control form {
+    display: inline-block;
+}
+
+.color_control .black {
+    background-color: black;
+}
+.color_control .blue {
+    background-color: blue;
+}
+.color_control .white {
+    background-color: white;
+}
+.color_control .green {
+    background-color: green;
+    margin-left: 4%;
+}
+.color_control .red {
+    background-color: red;
+    margin-left: 4.5%;
+}
+.color_control .colorless {
+    background-color: gray;
+    margin-left: 5%;
+}

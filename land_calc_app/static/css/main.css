@@ -1,0 +1,10 @@
+#deck_contents, #mana_cost, #other_specs, #chart {
+    border-style: solid;
+    border-width: 1px;
+    margin: 15px;
+    padding: 10px;
+}
+
+#deck_contents h3, #mana_cost h3 {
+    margin-right: 10px;
+}
