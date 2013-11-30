@@ -1,6 +1,8 @@
 #standard
 import collections
 import copy
+#this project
+import utils
 
 
 def dp_unique_combinations(deck, cards_seen):
@@ -18,7 +20,7 @@ def dp_unique_combinations(deck, cards_seen):
 
     def recursion(deck, cards, cards_seen):
         if sum(cards.values()) == cards_seen:
-            hashed = _hash_counter(cards)
+            hashed = utils.hash_counter(cards)
             if hashed not in hashed_unique_combos:
                 unique_combos.append(cards)
                 hashed_unique_combos.add(hashed)
@@ -34,7 +36,7 @@ def dp_unique_combinations(deck, cards_seen):
             new_deck = copy.deepcopy(deck)
             new_cards[key] += 1
             new_deck[key] -= 1
-            hashed = _hash_counter(new_cards)
+            hashed = utils.hash_counter(new_cards)
             if hashed not in visited_states:
                 visited_states.add(hashed)
                 recursion(new_deck, new_cards, cards_seen)
@@ -44,11 +46,3 @@ def dp_unique_combinations(deck, cards_seen):
     recursion(deck, cards, cards_seen=cards_seen)
 
     return unique_combos
-
-
-def _hash_counter(counter):
-    string_list = []
-    for card_name, card_count in counter.items():
-        string_list.append(card_name + str(card_count))
-    hash_str = "".join(sorted(string_list))
-    return hash_str

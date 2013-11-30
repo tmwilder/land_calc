@@ -1,7 +1,8 @@
 #standard
 from math import factorial as fact
-#local
+#this project
 import combinatorics
+import can_cast
 
 
 def get_odds_range(end_turn, deck, card_cost, on_the_play=True):
@@ -72,35 +73,10 @@ def _get_valid_combinations(card_cost, cards_lists):
 
     """
     valid_uniques = []
-    for combination in cards_lists:
-        enough_lands = _has_enough_lands(combination, card_cost)
-        if enough_lands:
-            has_colors = _has_right_colors(combination, card_cost)
-            if has_colors:
-                valid_uniques.append(combination)
+    for cards in cards_lists:
+        if can_cast.can_cast(card_cost, cards):
+            valid_uniques.append(cards)
     return valid_uniques
-
-
-def _has_enough_lands(cards, card_cost):
-    mana_keys = set(["w", "u", "b", "r", "g", "c"])
-    total_mana = 0
-    for card in cards:
-        if card in mana_keys:
-            total_mana += cards[card]
-
-    colorless_cost = sum(card_cost.values())
-    if total_mana >= colorless_cost:
-        return True
-    else:
-        return False
-
-
-def _has_right_colors(cards, mana_cost):
-    colored_mana_keys = set(["w", "u", "b", "r", "g"])
-    for color, number in mana_cost.items():
-        if (color in colored_mana_keys) and (cards[color] < number):
-            return False
-    return True
 
 
 def _cards_seen(deck, turns, on_the_play=True):

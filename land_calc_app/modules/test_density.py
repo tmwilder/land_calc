@@ -1,7 +1,7 @@
 #standard
 import unittest
 from collections import Counter
-#local
+#this project
 import density
 
 
@@ -27,7 +27,6 @@ class TestDensity(unittest.TestCase):
         self.assertEqual(result_2, 0.0)
 
         result_3 = density._get_one_turn_odds(turns=1, deck=self.deck_2, card_cost=Counter({"g":1, "w":1}))
-        # print result_3
         self.assertTrue(.77 < result_3 < .79)
 
 
@@ -49,30 +48,6 @@ class TestDensity(unittest.TestCase):
         self.assertEqual(density._n_choose_k(10, 1), 10.0)
         self.assertEqual(density._n_choose_k(5, 2), 10.0)
         self.assertEqual(density._n_choose_k(6, 3), 20)
-
-    def test_has_enough_lands(self):
-        cards = Counter({"u": 5, "g": 1})
-        cost = Counter({"u": 2, "c": 4})
-        self.assertEqual(density._has_enough_lands(cards, cost), True)
-
-        cost_2 = Counter({"u": 2, "c": 5})
-        self.assertEqual(density._has_enough_lands(cards, cost_2), False)
-
-    def test_has_right_colors(self):
-        result = density._has_right_colors(
-            cards=self.exact_cards,
-            mana_cost=self.cost_1
-        )
-        expected_result = False
-        self.assertEqual(result, expected_result)
-
-        cost_2 = Counter({"u": 2})
-        result_2 = density._has_right_colors(
-            cards=self.exact_cards,
-            mana_cost=cost_2
-        )
-        expected_result_2 = True
-        self.assertEqual(result_2, expected_result_2)
 
     def test_get_valid_combinations(self):
         uniques = [

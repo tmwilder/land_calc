@@ -2,7 +2,7 @@
 import unittest
 import itertools
 from collections import Counter
-#land calc
+#this project
 import combinatorics
 
 
@@ -21,14 +21,6 @@ class TestCombinatorics(unittest.TestCase):
             other_way = do_it_the_other_way(comparison_deck, x)
 
             self.assertEqual(len(ours), len(other_way))
-
-
-    def test_hash_counter(self):
-        counter = Counter({"w":1, "u":1})
-        self.assertEqual(combinatorics._hash_counter(counter), "u1w1")
-
-        counter_2 = Counter({"w":10, "s":5})
-        self.assertEqual(combinatorics._hash_counter(counter_2), "s5w10")
 
 
 if __name__ == "__main__":
