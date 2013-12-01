@@ -61,6 +61,10 @@ def _enough_mana(spell_cost, cards):
 def _get_relevant_cards(spell_cost, cards):
     """ Converts cards whose colored mana is irrelevant to colorless mana sources. """
     cards = copy.deepcopy(cards)
+    try:
+        cards.pop('s')
+    except KeyError:
+        pass
     relevant_mana_colors = set(''.join(spell_cost.keys()))
     for land_type in cards.keys():
         relevant = False
