@@ -21,20 +21,24 @@
         </div>
       </div>
 
-      <div class="row" id="deck_contents">
+      <div class="row" id="mana_cost">
         <div class="col-xs-3">
-          <h4 class="header">Mana Sources in Deck</h4>
+          <h4 class="header">What does your spell cost?</h4>
         </div>
         <div class="col-xs-9">
           {% include "color_control_snippet.html" %}
         </div>
       </div>
-      <div class="row" id="mana_cost">
+
+      <div class="row" id="deck_contents">
         <div class="col-xs-3">
-          <h4 class="header">Card Mana Cost</h4>
+          <h4 class="header">What lands are in your deck?</h4>
         </div>
         <div class="col-xs-9">
           {% include "color_control_snippet.html" %}
+        </div>
+        <div class="col-xs-9">
+          {% include "dual_color_control_snippet.html" %}
         </div>
       </div>
 
@@ -43,7 +47,7 @@
           <h4 class="header">Other Information</h4>
         </div>
         <div class="col-xs-2">
-          Total cards in deck: <input type="number" id="total_cards" min="0" max="200">
+          Total cards in deck: <input type="number" id="total_cards" min="0" max="200" value="40">
         </div>
         <div class="col-xs-2">
           Play Or Draw?:
@@ -60,7 +64,6 @@
           <div id="bar_chart"></div>
         </div>
       </div>
-
 
     </div>
   </body>

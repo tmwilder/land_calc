@@ -19,7 +19,7 @@ function(jquery, jqplot, bar_chart) {
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
 
-    function get_odds(deck, card_cost, on_the_play){
+    function _get_odds(deck, card_cost, on_the_play){
         var ajax_data = {
             deck: deck,
             card_cost: card_cost,
@@ -35,7 +35,9 @@ function(jquery, jqplot, bar_chart) {
         });
     }
 
-    function get_deck(){
+
+    function _get_deck(){
+        // Single Colored Lands
         var white = $("#deck_contents #white_count").val();
         var blue = $("#deck_contents #blue_count").val();
         var black = $("#deck_contents #black_count").val();
@@ -43,10 +45,40 @@ function(jquery, jqplot, bar_chart) {
         var green = $("#deck_contents #green_count").val();
         var colorless = $("#deck_contents #colorless_count").val();
 
+        // Duals
+        var azorius = $("#deck_contents #azorius_count").val();
+        var boros = $("#deck_contents #boros_count").val();
+        var dimir = $("#deck_contents #dimir_count").val();
+        var golgari = $("#deck_contents #golgari_count").val();
+        var gruul = $("#deck_contents #gruul_count").val();
+        var izzit = $("#deck_contents #izzit_count").val();
+        var orzhov = $("#deck_contents #orzhov_count").val();
+        var rakdos = $("#deck_contents #rakdos_count").val();
+        var selesnya = $("#deck_contents #selesnya_count").val();
+        var simic = $("#deck_contents #simic_count").val();
+
         var total_cards = $("#total_cards").val()
 
+        cards = {
+            w:white,
+            u:blue,
+            b:black,
+            r:red,
+            g:green,
+            c:colorless,
+            wu:azorius,
+            wr:boros,
+            ub:dimir,
+            bg:golgari,
+            rg:gruul,
+            ur:izzit,
+            wb:orzhov,
+            br:rakdos,
+            wg:selesnya,
+            ug:simic
+        };
+
         var total_lands = 0;
-        cards = {w:white, u:blue, b:black, r:red, g:green, c:colorless};
         var deck = {};
         for (var key in cards) {
             if (cards[key]){
@@ -61,7 +93,7 @@ function(jquery, jqplot, bar_chart) {
         return deck;
     }
 
-    function get_cost(){
+    function _get_cost(){
         var white = $("#mana_cost #white_count").val();
         var blue = $("#mana_cost #blue_count").val();
         var black = $("#mana_cost #black_count").val();
@@ -80,18 +112,26 @@ function(jquery, jqplot, bar_chart) {
         return card_cost;
     }
 
-    function get_play_status(){
+    function _get_play_status(){
         return $("#on_the_play").val() === "play" ? true: false;
     }
 
     function onGetOdds(){
-        var deck = get_deck();
-        var card_cost = get_cost();
-        var on_the_play = get_play_status();
-        get_odds(deck, card_cost, on_the_play);
+        var deck = _get_deck();
+        var card_cost = _get_cost();
+        var on_the_play = _get_play_status();
+        _get_odds(deck, card_cost, on_the_play);
     }
+
     existing_plot = undefined;
-    $("#get_odds").on('click', onGetOdds);
+
+
+    $('#nav_tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    });
+
+    $("#get_odds").click(onGetOdds);
     $(window).resize(function(){
         if (existing_plot !== undefined){
             existing_plot.replot();

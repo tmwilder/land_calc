@@ -1,0 +1,90 @@
+.azorius,
+.boros,
+.dimir,
+.golgari,
+.gruul,
+.izzit,
+.orzhov,
+.rakdos,
+.selesnya,
+.simic {
+    display: inline-block;
+    width:1.5em;
+    height:1.5em;
+}
+
+form {
+    display: inline-block;
+}
+
+.azorius {
+    background-image: linear-gradient(right, blue 50%, white 50%);
+    background-image: -o-linear-gradient(right, blue 50%, white 50%);
+    background-image: -moz-linear-gradient(right, blue 50%, white 50%);
+    background-image: -webkit-linear-gradient(right, blue 50%, white 50%);
+    background-image: -ms-linear-gradient(right, blue 50%, white 50%);
+}
+
+.boros {
+    background-image: linear-gradient(right, red 50%, white 50%);
+    background-image: -o-linear-gradient(right, red 50%, white 50%);
+    background-image: -moz-linear-gradient(right, red 50%, white 50%);
+    background-image: -webkit-linear-gradient(right, red 50%, white 50%);
+    background-image: -ms-linear-gradient(right, red 50%, white 50%);
+}
+.dimir {
+    background-image: linear-gradient(right, black 50%, blue 50%);
+    background-image: -o-linear-gradient(right, black 50%, blue 50%);
+    background-image: -moz-linear-gradient(right, black 50%, blue 50%);
+    background-image: -webkit-linear-gradient(right, black 50%, blue 50%);
+    background-image: -ms-linear-gradient(right, black 50%, blue 50%);
+}
+.golgari {
+    background-image: linear-gradient(right, green 50%, black 50%);
+    background-image: -o-linear-gradient(right, green 50%, black 50%);
+    background-image: -moz-linear-gradient(right, green 50%, black 50%);
+    background-image: -webkit-linear-gradient(right, green 50%, black 50%);
+    background-image: -ms-linear-gradient(right, green 50%, black 50%);
+}
+.gruul {
+    background-image: linear-gradient(right, green 50%, red 50%);
+    background-image: -o-linear-gradient(right, green 50%, red 50%);
+    background-image: -moz-linear-gradient(right, green 50%, red 50%);
+    background-image: -webkit-linear-gradient(right, green 50%, red 50%);
+    background-image: -ms-linear-gradient(right, green 50%, red 50%);
+}
+.izzit {
+    background-image: linear-gradient(right, red 50%, blue 50%);
+    background-image: -o-linear-gradient(right, red 50%, blue 50%);
+    background-image: -moz-linear-gradient(right, red 50%, blue 50%);
+    background-image: -webkit-linear-gradient(right, red 50%, blue 50%);
+    background-image: -ms-linear-gradient(right, red 50%, blue 50%);
+}
+.orzhov {
+    background-image: linear-gradient(right, black 50%, white 50%);
+    background-image: -o-linear-gradient(right, black 50%, white 50%);
+    background-image: -moz-linear-gradient(right, black 50%, white 50%);
+    background-image: -webkit-linear-gradient(right, black 50%, white 50%);
+    background-image: -ms-linear-gradient(right, black 50%, white 50%);
+}
+.rakdos {
+    background-image: linear-gradient(right, red 50%, black 50%);
+    background-image: -o-linear-gradient(right, red 50%, black 50%);
+    background-image: -moz-linear-gradient(right, red 50%, black 50%);
+    background-image: -webkit-linear-gradient(right, red 50%, black 50%);
+    background-image: -ms-linear-gradient(right, red 50%, black 50%);
+}
+.selesnya {
+    background-image: linear-gradient(right, green 50%, white 50%);
+    background-image: -o-linear-gradient(right, green 50%, white 50%);
+    background-image: -moz-linear-gradient(right, green 50%, white 50%);
+    background-image: -webkit-linear-gradient(right, green 50%, white 50%);
+    background-image: -ms-linear-gradient(right, green 50%, white 50%);
+}
+.simic {
+    background-image: linear-gradient(right, green 50%, blue 50%);
+    background-image: -o-linear-gradient(right, green 50%, blue 50%);
+    background-image: -moz-linear-gradient(right, green 50%, blue 50%);
+    background-image: -webkit-linear-gradient(right, green 50%, blue 50%);
+    background-image: -ms-linear-gradient(right, green 50%, blue 50%);
+}
