@@ -8,3 +8,11 @@
 #deck_contents h3, #mana_cost h3 {
     margin-right: 2%;
 }
+
+#calculator {
+    display: none;
+}
+
+#about .row {
+    margin-left: 1%;
+}

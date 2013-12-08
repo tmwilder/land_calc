@@ -1,5 +1,5 @@
-define(['js/lib/jquery-2.0.3.min'],
-function(jquery){
+define(['js/lib/jquery-2.0.3.min', 'jqplot/jquery.jqplot'],
+function(jquery, jqplot){
     require([
         'jqplot/jquery.jqplot',
         'jqplot/plugins/jqplot.barRenderer.min',

@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-xs-10">
+    <h2>What is the MTG Land Calculator?</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10">
+    <p>
+      This is a utility that calculates odds for a problem in the game <a href="http://www.wizards.com/Magic/Magazine/Default.aspx"> Magic the Gathering.</a>
+    </p>
+    <p>
+      It answers this question: <br>
+      <b>
+      With a particular mana-base, what are the odds that I will have drawn the right lands to cast a specific spell on each of the first ten turns?
+      </b>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-10">
+    <h2>How do I use it?</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10">
+    <p>
+      <b>1. Pick a card to consider casting.</b><br>
+      For this example, let's talk about the card <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=45279"> Bribery </a>. It costs three colorless and two blue mana.<br>
+      If you'd like you can follow along by clicking on the calculator tab above, and flipping back and forth from About to the Calculator.
+    </p>
+    <p>
+      <b>2. Enter the card's cost where it says "What does your spell cost?". </b> <br>
+      For Bribery, you want a 2 for the blue mana box, and a 3 for the grey box, which represents colorless mana.
+    </p>
+    <p>
+      <b>3. Enter your mana base in the area prompting "What lands are in your deck?". </b><br>
+      A typical limited deck mana base might have 8 islands, 9 swamps. For this you'd put an 8 by the blue box, and a 9 by the black one.<br>
+      If you had a land that could produce both black and blue, like <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=202536">Underground Sea</a> you could put a one by the hybrid blue and black box.
+    </p>
+    <p>
+      <b>4. Fill out other information, including the number of total cards in your deck, and hit "Get Your Odds!". </b><br>
+      For our hypothetical limited deck we'd put down 40 cards.
+    </p>
+    <p>
+      <b>5. A graph will appear showing how likely it is that you'll have drawn enough lands to play a spell on each of the first ten turns.</b><br>
+       The odds are shown in decimal form, so .59 on turn 5 in this example means that 59/100 times with 8 islands and 9 swamps in a 40 card deck on the play, you'll be able to cast your Bribery on the 5th turn. 
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-10">
+    <h2>What assumptions does it make?</h2>
+    <p>
+      <b>1. As of now this tool does not look at the odds of being able to cast the spell.</b>
+        It looks at the odds of drawing enough lands. This means that it will report the chance of having drawn the right lands to cast Bribery by turn 2 as greater than 0, when only two lands could have been played by then. The odds are close for being able to cast, and having drawn lands to cast.
+    </p>
+    <p>
+      <b>2. It does not take into account non-land factors like ramp spells and card selection spells.</b><br>
+      It operates as if you play one land per turn and do not cast any cards like <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370616">Divination</a>, which draws two cards, or <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=233231">Rampant Growth</a> which puts a land into play.
+    </p>
+    <p>
+      <b>3. It assumes that your lands tap for one mana and come into play untapped.</b><br>
+        Some dual lands like <a href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=376255">Azorius Chancery</a> do neither of these. For the most part your odds are quite close.
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10">
+    <h2> Why are these assumptions made? </h2>
+    <p> 
+      Each of the assumptions greatly reduces the hardware muscle needed to get you a fast answer. If there is enough demand, future versions of the utility may support assumption-free calculations.
+    </p>
+  </div>
+</div>
