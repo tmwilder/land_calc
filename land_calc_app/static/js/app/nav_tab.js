@@ -1,5 +1,6 @@
-define(['js/lib/jquery-2.0.3.min', '//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js'],
+define(['js/lib/jquery-2.0.3.min'],
 function(jquery){
+    require(['//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js']);
     $('#nav_tabs a').click(function (e) {
       e.preventDefault();
       $(this).tab('show');
