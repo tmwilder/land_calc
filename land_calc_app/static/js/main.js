@@ -13,6 +13,7 @@ requirejs.config({
 requirejs([
  'js/lib/jquery-2.0.3.min',
  'js/app/get_odds',
+ 'js/lib/addthis',
  'js/app/nav_tab',
 ],
 function(jquery, onGetOdds) {

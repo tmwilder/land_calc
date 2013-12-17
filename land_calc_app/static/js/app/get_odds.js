@@ -12,7 +12,10 @@ function(jquery, bar_chart){
             url: "/get_odds/",
             data: $.param({data: ajax_data}),
             dataType: "json",
-            success: bar_chart
+            success: function(data){
+                $("#get_odds").prop('disabled', false);
+                bar_chart(data);
+            }
         });
     }
 
@@ -100,6 +103,7 @@ function(jquery, bar_chart){
         var deck = _get_deck();
         var card_cost = _get_cost();
         var on_the_play = _get_play_status();
+        $("#get_odds").prop('disabled', true);
         _refresh_odds(deck, card_cost, on_the_play);
     }
 });
